@@ -1,0 +1,13 @@
+<div id="products">
+  <div class="container" style="display:flex;justify-content:row"> 
+    <div class="card" style="width:20rem;margin:15px" *ngFor="let product of products">
+        <img class="card-img-top" src="../../assets/images/tshirt.jpg" alt="{{product.name}}">
+        <div class="card-body">
+          <h4 class="card-title">{{product.name}}</h4>
+          <p class="card-text">Cena: {{product.price}} zł</p>
+          <button class="btn btn-primary" (click)='addToBasket(product)'>Dodaj do koszyka</button>
+      </div>
+    </div>   
+  </div>
+</div>
+

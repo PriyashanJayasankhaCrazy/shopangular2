@@ -1,0 +1,16 @@
+<div class="container"> 
+  <form #tpayForm="ngForm" (ngSubmit)="submit(tpayForm)">
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+      <div *ngFor="let group of trgroups" style="margin:20px">
+        <img src="{{group[3]}}" alt="{{group[1]}}">
+        <div class="form-check">
+          <label for="{{'i_bank' + group[0]}}" class="form-check-label">
+              <input id="{{'i_bank' + group[0]}}" name="trgroups" value="{{group[0]}}" type="radio" class="form-check-input" ngModel>
+              {{group[1]}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Dalej</button>
+  </form>
+</div>

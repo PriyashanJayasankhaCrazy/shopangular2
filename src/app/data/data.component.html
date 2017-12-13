@@ -1,0 +1,77 @@
+<div class="container">
+      <div class="row"> 
+            <div class="col-md-8 offset-md-2">
+                  <form [formGroup]="form" (ngSubmit)="submit()">
+                        <h5>Podmiot</h5>
+                        <div class="alert alert-warning" *ngIf="form.get('podmiot').hasError('required') && form.get('podmiot').touched">Podmiot jest obowiązkowy</div>
+                        <div class="form-check">
+                              <label for="prywatny" class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="podmiot" id="prywatny" value="prywatny" formControlName="podmiot" checked>
+                                    Prywatny
+                              </label>
+                        </div>
+                        <div class="form-check">
+                              <label for="biznesowy" class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="podmiot" id="biznesowy" value="biznesowy" formControlName="podmiot" >
+                                    Biznesowy
+                              </label>
+                        </div>
+                        <h5>Dane adresowe</h5>
+                        <div class="alert alert-warning" *ngIf="form.get('imie').hasError('required') && form.get('imie').touched">Imie jest obowiązkowe</div>
+                        <div class="form-group">
+                              <label for="imie">Imie</label>
+                              <input type="text" placeholder="Imie" id="imie" class="form-control" formControlName="imie">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('nazwisko').hasError('required') && form.get('nazwisko').touched">Nazwisko jest obowiązkowe</div>
+                        <div class="form-group">
+                              <label for="nazwisko">Nazwisko</label>
+                              <input type="text" placeholder="Nazwisko" id="nazwisko" class="form-control" formControlName="nazwisko">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('ulica').hasError('required') && form.get('ulica').touched">Ulica jest obowiązkowa</div>
+                        <div class="form-group">
+                              <label for="ulica">Ulica</label>
+                              <input type="text" placeholder="Ulica" id="ulica" class="form-control" formControlName="ulica">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('nrdomu').hasError('required') && form.get('nrdomu').touched">Nr domu jest obowiązkowy</div>
+                        <div class="form-group">
+                              <label for="nrdomu">Nr domu</label>
+                              <input type="text" placeholder="Nr domu" id="nrdomu" class="form-control" formControlName="nrdomu">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('nrlokalu').hasError('required') && form.get('nrlokalu').touched">Nr lokalu jest obowiązkowy</div>            
+                        <div class="form-group">
+                              <label for="nrlokalu">Nr lokalu</label>
+                              <input type="text" placeholder="Nr lokalu" id="nrlokalu" class="form-control" formControlName="nrlokalu">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('miasto').hasError('required') && form.get('miasto').touched">Miasto jest obowiązkowe</div>
+                        <div class="form-group">
+                              <label for="miasto">Miasto</label>
+                              <input type="text" placeholder="Miasto" id="miasto" class="form-control" formControlName="miasto">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('kodpocztowy').hasError('required') && form.get('kodpocztowy').touched">Kod pocztowy jest obowiązkowy</div>
+                        <div class="form-group">
+                              <label for="kodpocztowy">Kod Pocztowy</label>
+                              <input type="text" placeholder="Kod Pocztowy" id="kodpocztowy" class="form-control" formControlName="kodpocztowy">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('kraj').hasError('required') && form.get('kraj').touched">Kraj jest obowiązkowy</div>
+                        <div class="form-group">
+                              <label for="kraj">Kraj</label>
+                              <input type="text" placeholder="Kraj" id="kraj" class="form-control" formControlName="kraj">   
+                        </div> 
+                        <div class="alert alert-warning" *ngIf="form.get('telefon').hasError('required') && form.get('telefon').touched">Telefon jest obowiązkowy</div>
+                        <div class="form-group">
+                              <label for="telefon">Telefon</label>
+                              <input type="text" placeholder="Telefon" id="telefon" class="form-control" formControlName="telefon">   
+                        </div>
+                        <div class="alert alert-warning" *ngIf="form.get('regulamin').hasError('required') && form.get('regulamin').touched">Regulamin jest obowiązkowy</div>
+                        <div class="form-check">
+                              <label for="regulamin" class="form-check-label">
+                                    <input type="checkbox" id="regulamin" class="form-check-input" formControlName="regulamin">
+                                    Akceptuje regulamin sklepu
+                              </label>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success" [disabled]="form.invalid">Przejdź do płatności</button>
+                  </form>
+            </div>
+      </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row"> 
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+              <tr>
+                  <th scope="col">Nazwa</th>
+                  <th scope="col">Cena Jednostkowa</th>
+                  <th scope="col">Ilość</th>
+                  <th scope="col">Cena</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of basket">
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.qty}}</td>
+                <td>{{item.price * item.qty}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div class="form-check" *ngFor="let item of deliverers">
+            <label for="{{item.name}}" class="form-check-label" >
+                  <input type="radio" id="{{item.name}}" class="form-check-input" name="deliverer" (click)="addDeliverer(item)">
+                  {{item.name}} {{item.price}} zł
+            </label>
+            </div>
+          <button class="btn btn-success" [routerLink]="['/dane']">Dalej</button>
+    </div>
+  </div>
+</div>
